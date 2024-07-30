@@ -8,11 +8,7 @@
       { value: "men's%20clothing", text: "Men's Clothing" },
       { value: "women's%20clothing", text: "Women's Clothing" }
     ];
-  
-    const sortOptions = [
-      { value: "price-asc", text: "Price: Low to High" },
-      { value: "price-desc", text: "Price: High to Low" }
-    ];
+ 
   </script>
   
   <div>
@@ -22,11 +18,7 @@
       {/each}
     </select>
   
-    <select bind:value={$sortOption}>
-      {#each sortOptions as option}
-        <option value={option.value}>{option.text}</option>
-      {/each}
-    </select>
+   
   </div>
   
   <style>
