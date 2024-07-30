@@ -1,25 +1,38 @@
-
-  <script>
-
+<script>
+    import { selectedCategory, sortOption } from "./store.mjs";
+  
+    const categories = [
+      { value: "All", text: "All Categories" },
+      { value: "electronics", text: "Electronics" },
+      { value: "jewelery", text: "Jewelery" },
+      { value: "men's%20clothing", text: "Men's Clothing" },
+      { value: "women's%20clothing", text: "Women's Clothing" }
+    ];
+  
+    const sortOptions = [
+      { value: "price-asc", text: "Price: Low to High" },
+      { value: "price-desc", text: "Price: High to Low" }
+    ];
   </script>
   
   <div>
-    <select>
-        <option value="All">All Categories</option>
-        <option value="electronics">Electronics</option>
-        <option value="jewelery">Jewels</option>
-        <option value="men's%20clothing">Mens Clothing</option>
-        <option value="women's%20clothing">Womans Clothing</option>
-      </select>
-      <select>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-      </select>
+    <select bind:value={$selectedCategory}>
+      {#each categories as category}
+        <option value={category.value}>{category.text}</option>
+      {/each}
+    </select>
+  
+    <select bind:value={$sortOption}>
+      {#each sortOptions as option}
+        <option value={option.value}>{option.text}</option>
+      {/each}
+    </select>
   </div>
   
   <style>
-  div{
-    justify-self: start;
-    margin-top: 1vw;
-  }
+    div {
+      justify-self: start;
+      margin-top: 1vw;
+    }
   </style>
+  
